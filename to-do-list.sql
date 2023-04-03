@@ -7,12 +7,26 @@
 
 CREATE TABLE todolist (
 	id SERIAL PRIMARY KEY,
-	name varchar(80) not null,
-	quantity DECIMAL(16, 2) not null,
-	unit varchar(20) 
+	name varchar(25) NOT NULL,
+	status varchar(50) 
 );
 
-INSERT INTO todolist (name, quantity, unit)
-VALUES ('test', 5.5, 'test unit');
+INSERT INTO todolist (name, status)
+VALUES ('test', 'test unit');
 
 --select * from todolist
+
+
+-- -- Table structure
+
+-- CREATE TABLE todolist (
+-- 	id SERIAL PRIMARY KEY,
+-- 	name varchar(25) NOT NULL,
+-- 	quantity DECIMAL(16, 2) NOT NULL,
+-- 	unit varchar(50) 
+-- );
+
+-- INSERT INTO todolist (name, quantity, unit)
+-- VALUES ('test', 5, 'test unit');
+
+-- --select * from todolist
