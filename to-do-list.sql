@@ -9,11 +9,11 @@ CREATE TABLE todolist (
 	"id" SERIAL PRIMARY KEY,
 	"taskname" VARCHAR (300) NOT NULL,
 	"date" VARCHAR (100)
-	"status" BOOLEAN DEFAULT FALSE 
+	"status" DEFAULT FALSE 
 );
 
 INSERT INTO "todolist" ("taskname", "date", "status")
-VALUES ('book appointment', '4/11/2023', false);
+VALUES ('book appointment', '4/11/2023', false), ('finish homework', '4/1/2023', false), ('walk dog', '4/13/2023', false);
 
 --select * from todolist
 
