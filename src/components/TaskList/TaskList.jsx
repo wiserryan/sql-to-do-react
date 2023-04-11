@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import 'TaskList.css'
+//import taskList from './TaskList.css'
 
-function TaskList( {
+function TaskList() {
     const [taskName, setTaskName] = useState('');
-    const [date, setdate] = useState('');
+    const [date, setDate] = useState('');
     const [currentStatus, setCurrentStatus] = useState('');
     const [listOfTasks, setListOfTasks] = useState([]);
     const fetchTaskList = () => {
     
-    //GET request
+//GET request
     axios.get('/todo').then((response) => {
             setListOfTasks(response.data);
-        }).catch((erro) => {
+        }).catch((error) => {
             console.log(`Error in GET ${error}`);
             alert('Something Went Wrong');
         })
@@ -22,13 +22,14 @@ function TaskList( {
     fetchTaskList ();    
  }, []);
 
+ // POST request
  const submitForm = (e) => {
     e.preventDefault();
     axios.post('/todolist', {
         // Using values from our variables in state
         taskname: taskName,
         date: date,
-        currentstatus: fasle,
+        currentstatus: true,
     }).then((response) => {
         // Clear our input fields
         setTaskName('');
@@ -41,6 +42,49 @@ function TaskList( {
         alert('Something went wrong.');
     });
 };
+
+return (
+<>
+<h1>DOM check</h1>
+</>
+<div>
+    <ul>
+        {
+            listOfTasks.map((task) => (
+                <TaskList</TaskList>
+                key={task.id}
+                task={task}
+                fetchTaskList={fetchTaskList}
+                />
+            ))
+        }
+    </ul>
+</div>
+);
+
+//         <>
+//         <form onSubmit={submitForm}>
+//             Name: 
+//             <input type="text" value={creatureName}
+//             onChange={(event)=> setCreatureName(event.target.value)}> 
+//             </input>
+//             <br />
+//             Origin: 
+//             <input type="text" value={creatureOrigin}
+//             onChange={(event)=>setCreatueOrigin(event.target.value)}>     
+//             </input>
+//             <input type="submit"></input>
+//         </form>
+        
+//         </>
+//     )
+// } 
+
+
+
+
+
+
 
 
 
@@ -68,27 +112,10 @@ function TaskList( {
 //         })
 //     }
 
-//     return (
-//         <>
-//         <form onSubmit={submitForm}>
-//             Name: 
-//             <input type="text" value={creatureName}
-//             onChange={(event)=> setCreatureName(event.target.value)}> 
-//             </input>
-//             <br />
-//             Origin: 
-//             <input type="text" value={creatureOrigin}
-//             onChange={(event)=>setCreatueOrigin(event.target.value)}>     
-//             </input>
-//             <input type="submit"></input>
-//         </form>
-        
-//         </>
-//     )
-// } 
+
 
 // export default CreatureForm
 // All components must export
 
-
-export default ToDoList
+}
+export default TaskList;

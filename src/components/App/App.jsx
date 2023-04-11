@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import ToDoList from '../ToDoList/TaskList';
+import TaskList from '../TaskList/TaskList';
 import React from 'react';
 import'./App.css';
 
@@ -9,7 +9,7 @@ function App () {
   return (
     <div>
       <h1>TO DO APP</h1>
-      <ToDoList/>
+      <TaskList/>
     </div>
   );
 
