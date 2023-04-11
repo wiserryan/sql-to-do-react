@@ -9,6 +9,10 @@ function TaskList() {
     const [listOfTasks, setListOfTasks] = useState([]);
     const fetchTaskList = () => {
     
+//    !CRUD//////
+//   - Create.Read.Update.Delete 
+//   - Post - GET - PUT - DELETE
+
 //GET request
     axios.get('/todo').then((response) => {
             setListOfTasks(response.data);
@@ -43,43 +47,21 @@ function TaskList() {
     });
 };
 
-return (
-<>
-<h1>DOM check</h1>
-</>
-<div>
-    <ul>
-        {
-            listOfTasks.map((task) => (
-                <TaskList</TaskList>
-                key={task.id}
-                task={task}
-                fetchTaskList={fetchTaskList}
-                />
-            ))
-        }
-    </ul>
-</div>
-);
-
-//         <>
-//         <form onSubmit={submitForm}>
-//             Name: 
-//             <input type="text" value={creatureName}
-//             onChange={(event)=> setCreatureName(event.target.value)}> 
-//             </input>
-//             <br />
-//             Origin: 
-//             <input type="text" value={creatureOrigin}
-//             onChange={(event)=>setCreatueOrigin(event.target.value)}>     
-//             </input>
-//             <input type="submit"></input>
-//         </form>
-        
-//         </>
-//     )
-// } 
-
+// return (
+// <>
+// /* <div>
+//     <ul>
+//         {
+//             listOfTasks.map((task) => (
+//                // <TaskList</TaskList>
+//                 key={task.id}
+//                 task={task}
+//                 fetchTaskList={fetchTaskList}
+//                 />
+//             ))
+//         }
+//     </ul>
+// </div> */
 
 
 
