@@ -1,8 +1,48 @@
 import { useState, useEffect } from 'react'
-// We must import axios in each component where we want to use it
 import axios from 'axios'
-import './ToDoList.css'
-import ToDoForm from './ToDoForm.jsx';
+import 'TaskList.css'
+
+function TaskList( {
+    const [taskName, setTaskName] = useState('');
+    const [date, setdate] = useState('');
+    const [currentStatus, setCurrentStatus] = useState('');
+    const [listOfTasks, setListOfTasks] = useState([]);
+    const fetchTaskList = () => {
+    
+    //GET request
+    axios.get('/todo').then((response) => {
+            setListOfTasks(response.data);
+        }).catch((erro) => {
+            console.log(`Error in GET ${error}`);
+            alert('Something Went Wrong');
+        })
+    }
+
+ useEffect(() => {
+    fetchTaskList ();    
+ }, []);
+
+ const submitForm = (e) => {
+    e.preventDefault();
+    axios.post('/todolist', {
+        // Using values from our variables in state
+        taskname: taskName,
+        date: date,
+        currentstatus: fasle,
+    }).then((response) => {
+        // Clear our input fields
+        setTaskName('');
+        setDate('');
+        setCurrentStatus('');
+        // Update our list of tasks
+        fetchTaskList();
+    }).catch((error) => {
+        console.log(`Error in POST ${error}`);
+        alert('Something went wrong.');
+    });
+};
+
+
 
 //POST EXAMPLE
  //import props from CreatureList Here

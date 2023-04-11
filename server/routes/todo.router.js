@@ -7,12 +7,24 @@ const pool = require('../modules/pool.js');
 //   - Post - GET - PUT - DELETE
 
 // GET
+taskRouter.get
+
+
 
 // POST
 
 
+
+
+
 // PUT
 
+
+
+
 // DELETE
+
+
+
 
 module.exports = router;

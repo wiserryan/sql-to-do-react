@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react';
-//import axios from 'axios';
+import ToDoList from '../ToDoList/TaskList';
+import React from 'react';
+import'./App.css';
 
 
 function App () {
@@ -7,12 +9,7 @@ function App () {
   return (
     <div>
       <h1>TO DO APP</h1>
-      <ul>
-      <li>{'Wash dog'}</li>
-      <li>{'Take out trash'}</li>
-      <li>{'Clean bathroom'}</li>
-      <li>{'Do laundry'}</li>
-      </ul>
+      <ToDoList/>
     </div>
   );
 
@@ -61,4 +58,4 @@ function App () {
 //     }, []) //!Remember the empty array
 
 
-export default App
+export default App;
