@@ -6,12 +6,14 @@
 -- Table structure
 
 CREATE TABLE todolist (
-	id SERIAL PRIMARY KEY,
-	name varchar(25) NOT NULL,
-	status varchar(50) 
+	"id" SERIAL PRIMARY KEY,
+	"taskname" VARCHAR (300) NOT NULL,
+	"date" VARCHAR (100)
+	"kidsMeal" BOOLEAN DEFAULT FALSE 
+	"status" BOOLEAN DEFAULT FALSE 
 );
 
-INSERT INTO todolist (name, status)
+INSERT INTO "todolist" ("taskname", "date", "kidsMeal", "status")
 VALUES ('test', 'test unit');
 
 --select * from todolist

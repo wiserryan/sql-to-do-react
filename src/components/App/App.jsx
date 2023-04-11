@@ -7,6 +7,12 @@ function App () {
   return (
     <div>
       <h1>TO DO APP</h1>
+      <ul>
+      <li>{'Wash dog'}</li>
+      <li>{'Take out trash'}</li>
+      <li>{'Clean bathroom'}</li>
+      <li>{'Do laundry'}</li>
+      </ul>
     </div>
   );
 
